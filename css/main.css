@@ -1520,7 +1520,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #f1f;
+  background: #f78861;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2189,7 +2189,7 @@ body {
 }
 a {
   text-decoration: none;
-  color: #ccc;
+  color: #555;
 }
 .links-of-author a::before {
   content: "";
