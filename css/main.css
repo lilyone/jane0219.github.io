@@ -1520,7 +1520,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #8247f7;
+  background: #95ff4d;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2090,6 +2090,12 @@ a.search-result {
     width: auto;
   }
 }
+.container {
+  min-width: 100%;
+  margin-left: 0px;
+  padding-left: 0px;
+  width: 100%;
+}
 .custom-logo .site-meta-headline {
   text-align: center;
 }
@@ -2155,10 +2161,11 @@ body {
   width: 100%;
   padding: 0px;
 }
-.container {
+div.container {
   min-width: 100%;
-  margin: 0px;
-  padding: 0px;
+  margin-left: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
   width: 100%;
 }
 .header {
