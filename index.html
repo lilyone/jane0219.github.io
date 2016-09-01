@@ -260,7 +260,7 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-09-01T17:50:53+08:00" content="2016-09-01">
+            <time itemprop="dateCreated" datetime="2016-09-01T17:54:03+08:00" content="2016-09-01">
               2016-09-01
             </time>
           </span>
@@ -305,180 +305,80 @@
       
         
           
-            Hexo 是一个简单地、轻量地、基于Node.js的一个静态博客框架。通过Hexo我们可以快速创建自己的博客，仅需要几条命令就可以完成。本篇教程只针对win 
+            <p>Hexo 是一个简单地、轻量地、基于Node.js的一个静态博客框架。通过Hexo我们可以快速创建自己的博客，仅需要几条命令就可以完成。本篇教程只针对win </p>
+<p>more</p>
+<h2 id="配置环境"><a href="#配置环境" class="headerlink" title="配置环境"></a>配置环境</h2><hr>
+<p>安装Node,用来生成静态页面<br>安装git,把本地git提交到gitHub上<br>（安装到方便查找的地址）</p>
+<p>Node下载地址&gt;&gt;&gt;&gt;&gt;&gt;git下载地址</p>
+<h2 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h2><hr>
+<p>在 新建的hexo目录下右键 git bash here</p>
+<p>输入npm install -g hexo 命令回车执行</p>
+<p>上一条命令执行完后，输入hexo init 初始化hexo.<br>hexo g 生成静态页面 &gt;&gt;hexo s 启动本地服务进行调试 浏览器输入localhost:4000<br>ctrl +C 停止</p>
+<h2 id="配置gitHub"><a href="#配置gitHub" class="headerlink" title="配置gitHub"></a>配置gitHub</h2><hr>
+<p>在gitHub种建立与你用户名对象的仓库 仓库名为 用户名.github.io<br>创建SSH-Key</p>
+<p>$ ssh-keygen -t rsa -C “your_email@youremail.com” </p>
+<p>后面的your_email@youremail.com改为你在github上注册的邮箱，之后会要求确认路径和输入密码，我们这使用默认的一路回车就行。成功的话会在~/下生成.ssh文件夹，进去，打开id_rsa.pub，复制里面的key。<br>回到github上，进入 Account Settings（账户配置），左边选择SSH Keys，Add SSH Key,title随便填，粘贴在你电脑上生成的key。</p>
+<p>$ git config –global user.name “your name”<br>$ git config –global user.email “your_email@youremail.com”</p>
+<p>进入要上传的仓库，右键git bash，添加远程地址：</p>
+<p>$ git remote add origin git@github.com:yourName/yourRepo.git</p>
+<p>后面的yourName和yourRepo表示你再github的用户名和刚才新建的仓库，加完之后进入.git，打开config，这里会多出一个remote “origin”内容，这就是刚才添加的远程地址，也可以直接修改config来配置远程地址。<br>创建新文件夹，打开，然后执行</p>
+<p>git init </p>
+<p>以创建新的 git 仓库。</p>
+<h2 id="编辑文章并部署"><a href="#编辑文章并部署" class="headerlink" title="编辑文章并部署"></a>编辑文章并部署</h2><hr>
+<p>可以使用hexo new “文章名” 生成一个.md文件 路径为source_post\文章名.md<br>找到该文件打开并编辑<br>结束后输入hexo s<br>刷新<a href="http://localhost:4000/，可以发现已生成了一篇新文章" target="_blank" rel="external">http://localhost:4000/，可以发现已生成了一篇新文章</a> “你输入的文章名”。</p>
+<p>执行hexo g 生成静态页面</p>
+<p>部署到Github前需要配置_config.yml文件，首先找到下面的内容</p>
+<pre><code># Deployment
+</code></pre><h2 id="Docs-http-hexo-io-docs-deployment-html"><a href="#Docs-http-hexo-io-docs-deployment-html" class="headerlink" title="Docs: http://hexo.io/docs/deployment.html"></a>Docs: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">http://hexo.io/docs/deployment.html</a></h2><p>deploy:<br>type:</p>
+<p>改为</p>
+<pre><code># Deployment
+</code></pre><h2 id="Docs-http-hexo-io-docs-deployment-html-1"><a href="#Docs-http-hexo-io-docs-deployment-html-1" class="headerlink" title="Docs: http://hexo.io/docs/deployment.html"></a>Docs: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">http://hexo.io/docs/deployment.html</a></h2><p>deploy:<br>type: github<br>repository: git@github.com:你的名字/你的名字.github.io.git<br>branch: master</p>
+<p>执行 npm install hexo-deployer-git –save</p>
+<p>执行hexo d 部署到gitHub<br>当部署完成后，在浏览器中打开<a href="http://your_name.github.io/" target="_blank" rel="external">http://your_name.github.io/</a></p>
+<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><hr>
+<p>每次部署的步骤，可按以下三步来进行。</p>
+<p>hexo clean</p>
+<p>hexo generate</p>
+<p>hexo deploy</p>
+<p>一些常用命令：</p>
+<p>hexo new”postName” #新建文章</p>
+<p>hexo new page”pageName” #新建页面</p>
+<p>hexo generate #生成静态页面至public目录</p>
+<p>hexo server #开启预览访问端口（默认端口4000，’ctrl + c’关闭server）</p>
+<p>hexo deploy #将.deploy目录部署到GitHub</p>
+<p>hexo help # 查看帮助</p>
+<p>hexo version #查看Hexo的版本<br>报错总结<br>ERROR Deployer not found: git 或者 ERROR Deployer not found: github</p>
+<p>解决方法： npm install hexo-deployer-git –save</p>
+<p>如发生报错： ERROR Process failed: layout/.DS_Store , 那么进入主题里面layout和_partial目录下，使用删除命令：</p>
+<p>rm-rf.DS_Store</p>
+<p>ERROR Plugin load failed: hexo-server</p>
+<p>原因：</p>
+<p>Besides,utilities are separated into a standalone module.hexo.util is not reachable anymore.</p>
+<p>解决方法，执行命令：</p>
+<p>sudo npm install hexo-server</p>
+<p>执行命令hexo server，提示：Usage: hexo ….</p>
+<p>原因：</p>
+<p>我认为是没有生成本地服务</p>
+<p>解决方法，执行命令：</p>
+<p>npm install hexo-server –save</p>
+<p>提示：hexo-server@0.1.2 node_modules/hexo-server</p>
+<p>表示成功了参考</p>
+<p>这个时候再执行：</p>
+<p>hexo-server</p>
+<p>得到:</p>
+<p>INFOHexois running at <a href="http://0.0.0.0:4000/.PressCtrl+C" target="_blank" rel="external">http://0.0.0.0:4000/.PressCtrl+C</a> to stop.</p>
+<p>这个时候再点击<a href="http://0.0.0.0:4000，正常情况下应该是最原始的画面，但是我看到的是：" target="_blank" rel="external">http://0.0.0.0:4000，正常情况下应该是最原始的画面，但是我看到的是：</a></p>
+<p>白板和Cannot GET / 几个字</p>
+<p>原因：</p>
+<p>由于2.6以后就更新了，我们需要手动配置些东西，我们需要输入下面三行命令：</p>
+<p>npm install hexo-renderer-ejs –save</p>
+<p>npm install hexo-renderer-stylus –save</p>
+<p>npm install hexo-renderer-marked –save</p>
+<p>这个时候再重新生成静态文件，命令：</p>
+<p>hexo generate（或hexo g）</p>
+<p>启动本地服务器：</p>
+<p>hexo server（或hexo s）</p>
 
-more
-
-## 配置环境
-
----
-
-安装Node,用来生成静态页面
-安装git,把本地git提交到gitHub上
-（安装到方便查找的地址）
-
-Node下载地址>>>>>>git下载地址
-
-## 安装hexo
-
----
-
-在 新建的hexo目录下右键 git bash here
-
-输入npm install -g hexo 命令回车执行
-
-上一条命令执行完后，输入hexo init 初始化hexo.
-hexo g 生成静态页面 >>hexo s 启动本地服务进行调试 浏览器输入localhost:4000
-ctrl +C 停止
-
-## 配置gitHub
-
----
-
-在gitHub种建立与你用户名对象的仓库 仓库名为 用户名.github.io
-创建SSH-Key
-
-$ ssh-keygen -t rsa -C "your_email@youremail.com" 
-
-后面的your_email@youremail.com改为你在github上注册的邮箱，之后会要求确认路径和输入密码，我们这使用默认的一路回车就行。成功的话会在~/下生成.ssh文件夹，进去，打开id_rsa.pub，复制里面的key。
-回到github上，进入 Account Settings（账户配置），左边选择SSH Keys，Add SSH Key,title随便填，粘贴在你电脑上生成的key。
-
-$ git config --global user.name "your name"
-$ git config --global user.email "your_email@youremail.com"
-
-进入要上传的仓库，右键git bash，添加远程地址：
-
-$ git remote add origin git@github.com:yourName/yourRepo.git
-
-后面的yourName和yourRepo表示你再github的用户名和刚才新建的仓库，加完之后进入.git，打开config，这里会多出一个remote “origin”内容，这就是刚才添加的远程地址，也可以直接修改config来配置远程地址。
-创建新文件夹，打开，然后执行
-
-git init 
-
-以创建新的 git 仓库。
-
-## 编辑文章并部署
-
----
-
-可以使用hexo new “文章名” 生成一个.md文件 路径为source_post\文章名.md
-找到该文件打开并编辑
-结束后输入hexo s
-刷新http://localhost:4000/，可以发现已生成了一篇新文章 “你输入的文章名”。
-
-执行hexo g 生成静态页面
-
-部署到Github前需要配置_config.yml文件，首先找到下面的内容
-
-    # Deployment
-## Docs: http://hexo.io/docs/deployment.html
-deploy:          
-type:
-
-改为
-
-    # Deployment
-## Docs: http://hexo.io/docs/deployment.html
-deploy:
-type: github
-repository: git@github.com:你的名字/你的名字.github.io.git
-branch: master
-
-
-执行 npm install hexo-deployer-git --save
-
-执行hexo d 部署到gitHub
-当部署完成后，在浏览器中打开http://your_name.github.io/
-
-## 注意事项
-
----
-
-每次部署的步骤，可按以下三步来进行。
-
-hexo clean
-
-hexo generate
-
-hexo deploy
-
-一些常用命令：
-
-hexo new”postName” #新建文章
-
-hexo new page”pageName” #新建页面
-
-hexo generate #生成静态页面至public目录
-
-hexo server #开启预览访问端口（默认端口4000，’ctrl + c’关闭server）
-
-hexo deploy #将.deploy目录部署到GitHub
-
-hexo help # 查看帮助
-
-hexo version #查看Hexo的版本
-报错总结
-ERROR Deployer not found: git 或者 ERROR Deployer not found: github
-
-解决方法： npm install hexo-deployer-git –save
-
-如发生报错： ERROR Process failed: layout/.DS_Store , 那么进入主题里面layout和_partial目录下，使用删除命令：
-
-rm-rf.DS_Store
-
-ERROR Plugin load failed: hexo-server
-
-原因：
-
-Besides,utilities are separated into a standalone module.hexo.util is not reachable anymore.
-
-解决方法，执行命令：
-
-sudo npm install hexo-server
-
-执行命令hexo server，提示：Usage: hexo ….
-
-原因：
-
-我认为是没有生成本地服务
-
-解决方法，执行命令：
-
-npm install hexo-server –save
-
-提示：hexo-server@0.1.2 node_modules/hexo-server
-
-表示成功了参考
-
-这个时候再执行：
-
-hexo-server
-
-得到:
-
-INFOHexois running at http://0.0.0.0:4000/.PressCtrl+C to stop.
-
-这个时候再点击http://0.0.0.0:4000，正常情况下应该是最原始的画面，但是我看到的是：
-
-白板和Cannot GET / 几个字
-
-原因：
-
-由于2.6以后就更新了，我们需要手动配置些东西，我们需要输入下面三行命令：
-
-npm install hexo-renderer-ejs –save
-
-npm install hexo-renderer-stylus –save
-
-npm install hexo-renderer-marked –save
-
-这个时候再重新生成静态文件，命令：
-
-hexo generate（或hexo g）
-
-启动本地服务器：
-
-hexo server（或hexo s）
           
         
       
