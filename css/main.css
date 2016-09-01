@@ -1517,7 +1517,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #0e0f58;
+  background: #3ef4ff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2079,9 +2079,6 @@ a.search-result {
 }
 .page-post-detail .comments {
   overflow: hidden;
-}
-body {
-  background: url("/images/bg.jpg");
 }
 @media (max-width: 767px) {
   .header-inner,
