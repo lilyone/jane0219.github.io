@@ -1520,7 +1520,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #df008f;
+  background: #8247f7;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2157,6 +2157,9 @@ body {
 }
 .container {
   min-width: 100%;
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
 }
 .header {
   background: url("../images/bg3.jpg") no-repeat center;
