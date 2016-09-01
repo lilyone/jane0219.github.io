@@ -63,7 +63,7 @@
 <meta property="og:url" content="http://yoursite.com/2016/09/01/Hexo 安装教程/index.html">
 <meta property="og:site_name" content="小豌豆">
 <meta property="og:description" content="Hexo 是一个简单地、轻量地、基于Node.js的一个静态博客框架。通过Hexo我们可以快速创建自己的博客，仅需要几条命令就可以完成。本篇教程只针对win">
-<meta property="og:updated_time" content="2016-09-01T09:57:01.723Z">
+<meta property="og:updated_time" content="2016-09-01T10:00:16.180Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo 安装教程">
 <meta name="twitter:description" content="Hexo 是一个简单地、轻量地、基于Node.js的一个静态博客框架。通过Hexo我们可以快速创建自己的博客，仅需要几条命令就可以完成。本篇教程只针对win">
@@ -301,14 +301,14 @@
       
         <p>Hexo 是一个简单地、轻量地、基于Node.js的一个静态博客框架。通过Hexo我们可以快速创建自己的博客，仅需要几条命令就可以完成。本篇教程只针对win </p>
 <a id="more"></a>
-<h2 id="配置环境"><a href="#配置环境" class="headerlink" title="配置环境"></a>配置环境</h2><hr>
+<h4 id="配置环境"><a href="#配置环境" class="headerlink" title="配置环境"></a>配置环境</h4><hr>
 <p>安装Node,用来生成静态页面<br>安装git,把本地git提交到gitHub上<br>（安装到方便查找的地址）</p>
 <p>Node下载地址&gt;&gt;&gt;&gt;&gt;&gt;git下载地址</p>
-<h2 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h2><hr>
+<h4 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h4><hr>
 <p>在 新建的hexo目录下右键 git bash here</p>
 <p>输入npm install -g hexo 命令回车执行</p>
 <p>上一条命令执行完后，输入hexo init 初始化hexo.<br>hexo g 生成静态页面 &gt;&gt;hexo s 启动本地服务进行调试 浏览器输入localhost:4000<br>ctrl +C 停止</p>
-<h2 id="配置gitHub"><a href="#配置gitHub" class="headerlink" title="配置gitHub"></a>配置gitHub</h2><hr>
+<h4 id="配置gitHub"><a href="#配置gitHub" class="headerlink" title="配置gitHub"></a>配置gitHub</h4><hr>
 <p>在gitHub种建立与你用户名对象的仓库 仓库名为 用户名.github.io<br>创建SSH-Key</p>
 <p>$ ssh-keygen -t rsa -C “your_email@youremail.com” </p>
 <p>后面的your_email@youremail.com改为你在github上注册的邮箱，之后会要求确认路径和输入密码，我们这使用默认的一路回车就行。成功的话会在~/下生成.ssh文件夹，进去，打开id_rsa.pub，复制里面的key。<br>回到github上，进入 Account Settings（账户配置），左边选择SSH Keys，Add SSH Key,title随便填，粘贴在你电脑上生成的key。</p>
@@ -318,17 +318,16 @@
 <p>后面的yourName和yourRepo表示你再github的用户名和刚才新建的仓库，加完之后进入.git，打开config，这里会多出一个remote “origin”内容，这就是刚才添加的远程地址，也可以直接修改config来配置远程地址。<br>创建新文件夹，打开，然后执行</p>
 <p>git init </p>
 <p>以创建新的 git 仓库。</p>
-<h2 id="编辑文章并部署"><a href="#编辑文章并部署" class="headerlink" title="编辑文章并部署"></a>编辑文章并部署</h2><hr>
+<h4 id="编辑文章并部署"><a href="#编辑文章并部署" class="headerlink" title="编辑文章并部署"></a>编辑文章并部署</h4><hr>
 <p>可以使用hexo new “文章名” 生成一个.md文件 路径为source_post\文章名.md<br>找到该文件打开并编辑<br>结束后输入hexo s<br>刷新<a href="http://localhost:4000/，可以发现已生成了一篇新文章" target="_blank" rel="external">http://localhost:4000/，可以发现已生成了一篇新文章</a> “你输入的文章名”。</p>
 <p>执行hexo g 生成静态页面</p>
 <p>部署到Github前需要配置_config.yml文件，首先找到下面的内容</p>
-<h1 id="Deployment"><a href="#Deployment" class="headerlink" title="Deployment"></a>Deployment</h1><h2 id="Docs-http-hexo-io-docs-deployment-html"><a href="#Docs-http-hexo-io-docs-deployment-html" class="headerlink" title="Docs: http://hexo.io/docs/deployment.html"></a>Docs: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">http://hexo.io/docs/deployment.html</a></h2><p>deploy:<br>type:</p>
+<p>Deployment<br>Docs: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">http://hexo.io/docs/deployment.html</a><br>deploy:<br>type:</p>
 <p>改为</p>
-<pre><code># Deployment
-</code></pre><h2 id="Docs-http-hexo-io-docs-deployment-html-1"><a href="#Docs-http-hexo-io-docs-deployment-html-1" class="headerlink" title="Docs: http://hexo.io/docs/deployment.html"></a>Docs: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">http://hexo.io/docs/deployment.html</a></h2><p>deploy:<br>type: github<br>repository: git@github.com:你的名字/你的名字.github.io.git<br>branch: master</p>
+<p>Deployment<br>Docs: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">http://hexo.io/docs/deployment.html</a><br>deploy:<br>type: github<br>repository: git@github.com:你的名字/你的名字.github.io.git<br>branch: master</p>
 <p>执行 npm install hexo-deployer-git –save</p>
 <p>执行hexo d 部署到gitHub<br>当部署完成后，在浏览器中打开<a href="http://your_name.github.io/" target="_blank" rel="external">http://your_name.github.io/</a></p>
-<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><hr>
+<h4 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h4><hr>
 <p>每次部署的步骤，可按以下三步来进行。</p>
 <p>hexo clean</p>
 <p>hexo generate</p>
@@ -556,7 +555,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#配置环境"><span class="nav-number">1.</span> <span class="nav-text">配置环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装hexo"><span class="nav-number">2.</span> <span class="nav-text">安装hexo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#配置gitHub"><span class="nav-number">3.</span> <span class="nav-text">配置gitHub</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#编辑文章并部署"><span class="nav-number">4.</span> <span class="nav-text">编辑文章并部署</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Deployment"><span class="nav-number"></span> <span class="nav-text">Deployment</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Docs-http-hexo-io-docs-deployment-html"><span class="nav-number">1.</span> <span class="nav-text">Docs: http://hexo.io/docs/deployment.html</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Docs-http-hexo-io-docs-deployment-html-1"><span class="nav-number">2.</span> <span class="nav-text">Docs: http://hexo.io/docs/deployment.html</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注意事项"><span class="nav-number">3.</span> <span class="nav-text">注意事项</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#配置环境"><span class="nav-number">1.</span> <span class="nav-text">配置环境</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装hexo"><span class="nav-number">2.</span> <span class="nav-text">安装hexo</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置gitHub"><span class="nav-number">3.</span> <span class="nav-text">配置gitHub</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#编辑文章并部署"><span class="nav-number">4.</span> <span class="nav-text">编辑文章并部署</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#注意事项"><span class="nav-number">5.</span> <span class="nav-text">注意事项</span></a></li></ol></div>
             
           </div>
         </section>
