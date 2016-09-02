@@ -269,6 +269,159 @@
             
               
                 
+                <a class="post-title-link" href="/2016/09/02/汉诺塔 游戏/" itemprop="url">
+                  未命名
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-09-02T15:09:16+08:00" content="2016-09-02">
+              2016-09-02
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/09/02/汉诺塔 游戏/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/02/汉诺塔 游戏/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/09/02/汉诺塔 游戏/" class="leancloud_visitors" data-flag-title="">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>&lt;!DOCTYPE html&gt;</p>
+<html><br><head><br><meta charset="utf-8"><br>    <title>汉诺塔游戏</title><br>    <style type="text/css"><br><br>        <em>{<br>    margin:0px;<br>    padding: 0px;<br>   }<br>#box{<br>    height: 530px;<br>    width: 900px;<br>    background: black;<br>    margin:0px auto;<br>    position: relative;<br>}<br>img{<br>    width: 900px;<br>    height: 200px;<br>    margin-bottom: 50px;<br>    margin-top: -60px;<br>    position: relative;<br>    top: -28px;<br>    transform: scaleX(20deg);<br>}<br>#box div{<br>    height: 500px;<br>    width: 300px;<br>    float: left;<br>    margin-bottom: 50px;<br>    /</em>position: relative;<em>/<br>}<br>i{<br>    position: relative;<br>    left: 145px;<br>    top: 140px;<br>    display: block;<br>    height: 30px;<br>    width: 10px;<br>    border-radius: 60px;<br>    background: lightgoldenrodyellow;<br>    animation: move 1s linear infinite;<br>}<br>@keyframes move{<br>    0{transform: rotate(20deg);}<br>    50%{transform: rotate(0deg);}<br>    100%{transform: rotate(-10deg);}<br>}<br>#box em{<br>    display: block;<br>    height: 350px;<br>    width: 20px;<br>    border-radius: 5px;<br>    margin:150px 0px 0px 140px;<br>    text-align: center;<br>    z-index: 1000;<br>}<br>#a{<br>    background: yellow;<br>}<br>#b{<br>    background: purple;<br>}<br>#c{<br>    background: brown;<br>}<br>#txt{<br>    height: 30px;<br>    width: 150px;<br>    color: #b0b0b0;<br>    border:1px solid gray;<br>}<br>#btn1{<br>    height: 30px;<br>    margin-left: 20px;<br>    width: 60px;<br>}<br>#btn2{<br>    height: 30px;<br>    margin-left: 20px;<br>    width: 60px;<br>}<br>form{<br>    width: 350px;<br>    margin:0px auto;<br>}<br><br>    </style><br></head><br><body><br><div id="box"><br>    <div id="Oa"><br>        <i class="i1"></i><br>        <em id="a">a</em><br>    </div><br>    <div id="Ob"><br>        <i class="i2"></i><br>        <em id="b">b</em><br>    </div><br>    <div id="Oc"><br>        <i class="i3"></i><br>        <em id="c">c</em><br>    </div><br><!--    <i id="idiv"></i>--><br>    <form><br>        <input type="text" value="输入盘子个数" id="txt"><br>        <input type="button" id="btn1" value="开始"><br>        <input type="button" id="btn2" value="暂停"><br>    </form><br><br></div><br><script type="text/javascript"><br>    var bigBox,Oabox,Obbox,Ocbox,btn1,btn2,txt;<br>var spanList;<br>var atrSpan=[];<br>var aa=0;<br>var bb=0;<br>var cc=0;<br>var isTrue=true;<br>var count=0;<br>window.onload=function(){<br>    bigBox=document.getElementById(“box”);<br>    Oabox=document.getElementById(“Oa”);<br>    Obbox=document.getElementById(“Ob”);<br>    Ocbox=document.getElementById(“Oc”);<br>    btn1=document.getElementById(“btn1”);<br>    btn2=document.getElementById(“btn2”);<br>    txt=document.getElementById(“txt”);<br>    btn1.addEventListener(“click”,start,false);<br>    btn2.addEventListener(“click”,end,false);<br>}<br>function start(){<br>    if(count==0){<br>        var txtValue=parseInt(txt.value);<br>        var height=30;<br>        var width=200;<br>        for(var i=0;i&lt;txtValue;i++){<br>            var color=”rgb(“+Math.round(Math.random()</em>255)+”,”+Math.round(Math.random()<em>255)+”,”+Math.round(Math.random()</em>255)+”)”;<br>            var Ospan=document.createElement(“span”);<br>            Ospan.style.display=”block”;;<br>            Ospan.style.height=height+”px”;<br>            Ospan.style.width=width+”px”;<br>            Ospan.style.background=color;<br>            Ospan.style.position=”absolute”;<br>            var delX=(300-width)/2;<br>            var delY=500-height*i;<br>            Ospan.style.left=delX+”px”;<br>            Ospan.style.top=delY+”px”;<br>            Ospan.style.borderRadius=”20px”;<br>            width-=30;<br>            Oabox.appendChild(Ospan);<br>            aa+=30;<br>        }<br>        spanList=document.getElementsByTagName(‘span’);<br>        for(var i=spanList.length-1;i&gt;=0;i–){<br>            atrSpan.push(spanList[i]);<br>        }<br>   }<br><br>    move(txtValue,150,450,750);<br>}<br><br>var attr=[];<br>var m=0;<br>var top=0;<br>var times=300;<br>var h=1;<br>function move(n,a,b,c){<br>        count++;<br><br>        if(n==1){<br>            clearTimeout(attr[m]);<br>            attr[m]=setTimeout(function(){<br>                var str=atrSpan[n-1].style.left.split(“p”);<br>                var _left=str[0];<br>                if(_left&gt;0&amp;&amp;_left<300){
+                    aa-=30;
+                }else if(_left<600&&_left>300){<br>                    bb-=30;<br>                }else {<br>                    cc-=30;<br>                }<br>                atrSpan[n-1].style.top=”120px”;<br>            },times);<br>            m=m+1;times+=300;<br>            clearTimeout(attr[m]);<br>            attr[m]=setTimeout(function(){<br>                c=c-atrSpan[n-1].offsetWidth/2;<br>                atrSpan[n-1].style.left=c+”px”;<br>            },times);<br>            m=m+1;times+=300;<br>            clearTimeout(attr[m]);<br>            attr[m]=setTimeout(function(){<br>                if(c&gt;0&amp;&amp;c<300){
+                    var _top=500-aa;
+                    aa+=30;
+                }else if(c>300&amp;&amp;c<600){
+                    var _top=500-bb;
+                    bb+=30;
+                }else if(c>600&amp;&amp;c<900){
+                    var _top=500-cc;
+                    cc+=30;
+                }
+                atrSpan[n-1].style.top=_top+"px";
+            },times);
+            m=m+1;times+=300;
+            clearTimeout(attr[m]);
+        }else{
+            move(n-1,a,c,b);
+            clearTimeout(attr[m]);
+            attr[m]=setTimeout(function(){
+
+                var str=atrSpan[n-1].style.left.split("p");
+                var _left=str[0];
+                if(_left>0&amp;&amp;_left<300){
+                    aa-=30;
+                }else if(_left<600&&_left>300){<br>                    bb-=30;<br>                }else {<br>                    cc-=30;<br>                }<br>                atrSpan[n-1].style.top=”120px”;<br>            },times);<br>            m=m+1;times+=300;<br>            clearTimeout(attr[m]);<br>            attr[m]=setTimeout(function(){<br>                c=c-atrSpan[n-1].offsetWidth/2;<br>                atrSpan[n-1].style.left=c+”px”;<br>            },times);<br>            m=m+1;times+=300;<br>            clearTimeout(attr[m]);<br>            attr[m]=setTimeout(function(){<br>                if(c&gt;0&amp;&amp;c<300){
+                    var _top=500-aa;
+                    aa+=30;
+                }else if(c>300&amp;&amp;c<600){
+                    var _top=500-bb;
+                    bb+=30;
+                }else if(c>600&amp;&amp;c<900){
+                    var _top=500-cc;
+                    cc+=30;
+                }
+                atrSpan[n-1].style.top=_top+"px";    
+            },times);
+            m=m+1;times+=300;
+            clearTimeout(attr[m]);
+            move(n-1,b,a,c);
+        }
+
+     }
+function end(){
+    for(var k=0;k<attr.length;k++){
+        clearTimeout(attr[k]);
+    }
+}
+</script><br></body><br></html>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/09/01/Hexo 安装教程/" itemprop="url">
                   Hexo 安装教程
                 </a>
@@ -516,7 +669,7 @@ word: the wonderful thing is eat world.</p>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">2</span>
+              <span class="site-state-item-count">3</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
