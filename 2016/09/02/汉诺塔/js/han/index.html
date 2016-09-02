@@ -57,16 +57,43 @@
 
 
 
-<meta name="description" content="The wonderful thing is eat the world。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="categories">
-<meta property="og:url" content="http://yoursite.com/categories/index.html">
+<meta name="description" content="var bigBox,Oabox,Obbox,Ocbox,btn1,btn2,txt;
+var spanList;
+var atrSpan=[];
+var aa=0;
+var bb=0;
+var cc=0;
+var isTrue=true;
+var count=0;
+window.onload=function(){
+	bigBox=document.getElementById(&quot;box&quot;);">
+<meta property="og:type" content="article">
+<meta property="og:title" content="小豌豆">
+<meta property="og:url" content="http://yoursite.com/2016/09/02/汉诺塔/js/han/index.html">
 <meta property="og:site_name" content="小豌豆">
-<meta property="og:description" content="The wonderful thing is eat the world。">
-<meta property="og:updated_time" content="2016-08-31T10:35:24.263Z">
+<meta property="og:description" content="var bigBox,Oabox,Obbox,Ocbox,btn1,btn2,txt;
+var spanList;
+var atrSpan=[];
+var aa=0;
+var bb=0;
+var cc=0;
+var isTrue=true;
+var count=0;
+window.onload=function(){
+	bigBox=document.getElementById(&quot;box&quot;);">
+<meta property="og:updated_time" content="2016-08-22T00:49:03.582Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="categories">
-<meta name="twitter:description" content="The wonderful thing is eat the world。">
+<meta name="twitter:title" content="小豌豆">
+<meta name="twitter:description" content="var bigBox,Oabox,Obbox,Ocbox,btn1,btn2,txt;
+var spanList;
+var atrSpan=[];
+var aa=0;
+var bb=0;
+var cc=0;
+var isTrue=true;
+var count=0;
+window.onload=function(){
+	bigBox=document.getElementById(&quot;box&quot;);">
 
 
 
@@ -84,13 +111,7 @@
   };
 </script>
 
-  <title>
-  
-
-  
-    分类 | 小豌豆
-  
-</title>
+  <title>  | 小豌豆 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -121,7 +142,7 @@
     
   
   <embed src="../source/music/1.mp3" hidden="true" autostart="true" loop="true"/>
-  <div class="container one-collumn sidebar-position-left  ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
     <a href="https://github.com/you"><img class="image" style="position: absolute; top: 0; right: 0px; border: 0;" src="https://camo.githubusercontent.com/52760788cde945287fbb584134c4cbc2bc36f904/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f77686974655f6666666666662e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png"></a>
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -254,16 +275,223 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
     
-      <div class="category-all-page">
-        <div class="category-all-title">
-            Keine Kategorien
-        </div>
-        <div class="category-all">
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-09-02T14:47:25+08:00" content="2016-09-02">
+              2016-09-02
+            </time>
+          </span>
+
           
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/09/02/汉诺塔/js/han/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/02/汉诺塔/js/han/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/09/02/汉诺塔/js/han/" class="leancloud_visitors" data-flag-title="">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
         </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        var bigBox,Oabox,Obbox,Ocbox,btn1,btn2,txt;
+var spanList;
+var atrSpan=[];
+var aa=0;
+var bb=0;
+var cc=0;
+var isTrue=true;
+var count=0;
+window.onload=function(){
+	bigBox=document.getElementById("box");
+	Oabox=document.getElementById("Oa");
+	Obbox=document.getElementById("Ob");
+	Ocbox=document.getElementById("Oc");
+	btn1=document.getElementById("btn1");
+	btn2=document.getElementById("btn2");
+	txt=document.getElementById("txt");
+	btn1.addEventListener("click",start,false);
+	btn2.addEventListener("click",end,false);
+}
+function start(){
+	if(count==0){
+		var txtValue=parseInt(txt.value);
+		var height=30;
+		var width=200;
+		for(var i=0;i<txtvalue;i++){ var="" color="rgb(" +math.round(math.random()*255)+","+math.round(math.random()*255)+","+math.round(math.random()*255)+")";="" ospan="document.createElement("span");" ospan.style.display="block" ;;="" ospan.style.height="height+"px";" ospan.style.width="width+"px";" ospan.style.background="color;" ospan.style.position="absolute" ;="" delx="(300-width)/2;" dely="500-height*i;" ospan.style.left="delX+"px";" ospan.style.top="delY+"px";" ospan.style.borderradius="20px" width-="30;" oabox.appendchild(ospan);="" aa+="30;" }="" spanlist="document.getElementsByTagName('span');" for(var="" i="spanList.length-1;i">=0;i--){
+	    	atrSpan.push(spanList[i]);
+	    }
+   }
+     
+	move(txtValue,150,450,750);
+}
+
+var attr=[];
+var m=0;
+var top=0;
+var times=300;
+var h=1;
+function move(n,a,b,c){
+	    count++;
+	   
+		if(n==1){
+			clearTimeout(attr[m]);
+			attr[m]=setTimeout(function(){
+				var str=atrSpan[n-1].style.left.split("p");
+				var _left=str[0];
+				if(_left>0&&_left<300){ aa-="30;" }else="" if(_left<600&&_left="">300){
+					bb-=30;
+				}else {
+					cc-=30;
+				}
+				atrSpan[n-1].style.top="120px";
+			},times);
+			m=m+1;times+=300;
+			clearTimeout(attr[m]);
+			attr[m]=setTimeout(function(){
+				c=c-atrSpan[n-1].offsetWidth/2;
+				atrSpan[n-1].style.left=c+"px";
+			},times);
+			m=m+1;times+=300;
+			clearTimeout(attr[m]);
+			attr[m]=setTimeout(function(){
+				if(c>0&&c<300){ var="" _top="500-aa;" aa+="30;" }else="" if(c="">300&&c<600){ var="" _top="500-bb;" bb+="30;" }else="" if(c="">600&&c<900){ var="" _top="500-cc;" cc+="30;" }="" atrspan[n-1].style.top="_top+"px";" },times);="" m="m+1;times+=300;" cleartimeout(attr[m]);="" }else{="" move(n-1,a,c,b);="" attr[m]="setTimeout(function(){" str="atrSpan[n-1].style.left.split("p");" _left="str[0];" if(_left="">0&&_left<300){ aa-="30;" }else="" if(_left<600&&_left="">300){
+					bb-=30;
+				}else {
+					cc-=30;
+				}
+				atrSpan[n-1].style.top="120px";
+			},times);
+			m=m+1;times+=300;
+			clearTimeout(attr[m]);
+			attr[m]=setTimeout(function(){
+				c=c-atrSpan[n-1].offsetWidth/2;
+			    atrSpan[n-1].style.left=c+"px";
+			},times);
+			m=m+1;times+=300;
+			clearTimeout(attr[m]);
+			attr[m]=setTimeout(function(){
+				if(c>0&&c<300){ var="" _top="500-aa;" aa+="30;" }else="" if(c="">300&&c<600){ var="" _top="500-bb;" bb+="30;" }else="" if(c="">600&&c</600){></300){></300){></900){></600){></300){></300){></txtvalue;i++){>
+      
+    </div>
+
+    <div>
+      
+        
+<div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center">
+  <div>Enjoy it ? Donate me !</div>
+  <button id="rewardButton", disable="enable", onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}", style="cursor: pointer; border: 0; outline: 0; border-radius: 100%; padding: 0; margin: 0; letter-spacing: normal; text-transform: none; text-indent: 0px; text-shadow: none">
+    <span onmouseover="this.style.color='rgb(236,96,0)';this.style.background='rgb(204,204,204)'" onMouseOut="this.style.color='#fff';this.style.background='rgb(236,96,0)'" style="display: inline-block; width: 70px; height: 70px; border-radius: 100%; line-height: 81px; color: #fff; font: 400 35px/75px 'microsofty'; background: rgb(236,96,0)">赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/weixin.jpg" alt="Jane WeChat Pay" style="width: 200px; max-width: 100%; display: inline-block"/>
+        <p>微信打赏</p>
       </div>
     
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/zhifu.jpg" alt="Jane Alipay" style="width: 200px; max-width: 100%; display: inline-block"/>
+        <p>支付宝打赏</p>
+      </div>
+    
+  </div>
+</div>
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/09/02/汉诺塔/js/eventFZ/" rel="next" title="">
+                <i class="fa fa-chevron-left"></i> 
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
   </div>
 
 
@@ -274,8 +502,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="categories/index.html"
-           data-title="categories" data-url="http://yoursite.com/categories/index.html">
+      <div class="ds-thread" data-thread-key="2016/09/02/汉诺塔/js/han/"
+           data-title="" data-url="http://yoursite.com/2016/09/02/汉诺塔/js/han/">
       </div>
     
   </div>
@@ -299,8 +527,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/default_avatar.jpg"
@@ -367,6 +604,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">此文章未包含目录</p>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -451,6 +699,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=0.5.0"></script>
+
+
 
   
 

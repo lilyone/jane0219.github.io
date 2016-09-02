@@ -1,1021 +1,334 @@
-<?xml version="1.0" encoding="utf-8"?>
-<search>
-  
-  
-    
-    <entry>
-      <title></title>
-      <url>http://yoursite.com/2016/09/02/%E6%B1%89%E8%AF%BA%E5%A1%94/js/han/</url>
-      <content type="html"><![CDATA[var bigBox,Oabox,Obbox,Ocbox,btn1,btn2,txt;
-var spanList;
-var atrSpan=[];
-var aa=0;
-var bb=0;
-var cc=0;
-var isTrue=true;
-var count=0;
-window.onload=function(){
-	bigBox=document.getElementById("box");
-	Oabox=document.getElementById("Oa");
-	Obbox=document.getElementById("Ob");
-	Ocbox=document.getElementById("Oc");
-	btn1=document.getElementById("btn1");
-	btn2=document.getElementById("btn2");
-	txt=document.getElementById("txt");
-	btn1.addEventListener("click",start,false);
-	btn2.addEventListener("click",end,false);
-}
-function start(){
-	if(count==0){
-		var txtValue=parseInt(txt.value);
-		var height=30;
-		var width=200;
-		for(var i=0;i<txtvalue;i++){ var="" color="rgb(" +math.round(math.random()*255)+","+math.round(math.random()*255)+","+math.round(math.random()*255)+")";="" ospan="document.createElement("span");" ospan.style.display="block" ;;="" ospan.style.height="height+"px";" ospan.style.width="width+"px";" ospan.style.background="color;" ospan.style.position="absolute" ;="" delx="(300-width)/2;" dely="500-height*i;" ospan.style.left="delX+"px";" ospan.style.top="delY+"px";" ospan.style.borderradius="20px" width-="30;" oabox.appendchild(ospan);="" aa+="30;" }="" spanlist="document.getElementsByTagName('span');" for(var="" i="spanList.length-1;i">=0;i--){
-	    	atrSpan.push(spanList[i]);
-	    }
-   }
-     
-	move(txtValue,150,450,750);
-}
+<!doctype html>
 
-var attr=[];
-var m=0;
-var top=0;
-var times=300;
-var h=1;
-function move(n,a,b,c){
-	    count++;
-	   
-		if(n==1){
-			clearTimeout(attr[m]);
-			attr[m]=setTimeout(function(){
-				var str=atrSpan[n-1].style.left.split("p");
-				var _left=str[0];
-				if(_left>0&&_left<300){ aa-="30;" }else="" if(_left<600&&_left="">300){
-					bb-=30;
-				}else {
-					cc-=30;
-				}
-				atrSpan[n-1].style.top="120px";
-			},times);
-			m=m+1;times+=300;
-			clearTimeout(attr[m]);
-			attr[m]=setTimeout(function(){
-				c=c-atrSpan[n-1].offsetWidth/2;
-				atrSpan[n-1].style.left=c+"px";
-			},times);
-			m=m+1;times+=300;
-			clearTimeout(attr[m]);
-			attr[m]=setTimeout(function(){
-				if(c>0&&c<300){ var="" _top="500-aa;" aa+="30;" }else="" if(c="">300&&c<600){ var="" _top="500-bb;" bb+="30;" }else="" if(c="">600&&c<900){ var="" _top="500-cc;" cc+="30;" }="" atrspan[n-1].style.top="_top+"px";" },times);="" m="m+1;times+=300;" cleartimeout(attr[m]);="" }else{="" move(n-1,a,c,b);="" attr[m]="setTimeout(function(){" str="atrSpan[n-1].style.left.split("p");" _left="str[0];" if(_left="">0&&_left<300){ aa-="30;" }else="" if(_left<600&&_left="">300){
-					bb-=30;
-				}else {
-					cc-=30;
-				}
-				atrSpan[n-1].style.top="120px";
-			},times);
-			m=m+1;times+=300;
-			clearTimeout(attr[m]);
-			attr[m]=setTimeout(function(){
-				c=c-atrSpan[n-1].offsetWidth/2;
-			    atrSpan[n-1].style.left=c+"px";
-			},times);
-			m=m+1;times+=300;
-			clearTimeout(attr[m]);
-			attr[m]=setTimeout(function(){
-				if(c>0&&c<300){ var="" _top="500-aa;" aa+="30;" }else="" if(c="">300&&c<600){ var="" _top="500-bb;" bb+="30;" }else="" if(c="">600&&c</600){></300){></300){></900){></600){></300){></300){></txtvalue;i++){>]]></content>
-    </entry>
-    
-    <entry>
-      <title></title>
-      <url>http://yoursite.com/2016/09/02/%E6%B1%89%E8%AF%BA%E5%A1%94/js/eventFZ/</url>
-      <content type="html"><![CDATA[var evenObject={
-	/*事件本身兼容*/
-	getEven:function(event){
-       return event||window.event;
-	},
-	/*鼠标键盘事件的兼容*/
-    getButton:function(event){
-    if(document.implementation.hasFeature("MouseEvents","2.0")){
-      return event.button;
-    }else{
-      //针对IE8及以前版本
-      console.log('button:'+event.button)
-      switch(event.button){
-        case 0:
-        case 1:
-        case 3:
-        case 5:
-        case 7: return 0;
-        case 4: return 1;
-        case 2:
-        case 6: return 2;
-      }
-    }
-  },
-  /*得到目标事件的兼容*/
-    getTarget:function(event){
-    	return event.target||event.srcElement;
-    },
-  /*阻止事件冒泡的兼容*/
-    stopPro:function(event){
-    	if (event.stopPropagation) {
-    		event.stopPropagation();
-    	}else{
-    		event.cancelBubble=true;
-    	}
-    },
-  /*取消事件的默认行为的兼容*/
-    returnFal:function(event){
-    	if (event.preventDefault) {
-    		event.preventDefault();
-    	}else{
-    		event.returnValue=false;
-    	}
-    },
 
-   /*dom2级事件监听的兼容(这里的bool参数只能传false,,为了IE6。。)*/
-   addListener:function(element,item,itFunc){
-   		if (element.addEventListener) {
-   			element.addEventListener(item,itFunc,false);
-   		}else if(element.attachEvent){
-   			element.attachEvent("on"+item,itFunc);
-   		}else{
-   			element["on"+item]=itFunc;
-   		}
-   },
-   removeListener:function(element,item,itFunc){
-   	   if (element.removeEventListener) {
-   	   		element.removeEventListener(item,itFunc,false);
-   	   }else if(element.attachEvent){
-   	   		element.detachEvent("on"+item,itFunc);
-   	   }else{
-   	   		element["on"+item]=null;
-   	   }
-   },
-   /*得到浏览器窗口大小的兼容*/
-   getClientWidth:function(){
-   	  return document.documentElement.clientWidth||document.body.clientWidth;
-   },
-   getClientHeight:function(){
-   	return document.documentElement.clientHeight||document.documentElement.clientHeight;
-   },
-}]]></content>
-    </entry>
-    
-    <entry>
-      <title></title>
-      <url>http://yoursite.com/2016/09/02/%E6%B1%89%E8%AF%BA%E5%A1%94/css/han/</url>
-      <content type="html"><![CDATA[*{
-	margin:0px;
-	padding: 0px;
-}
-#box{
-	height: 530px;
-	width: 900px;
-	background: black;
-	margin:0px auto;
-	position: relative;
-}
-img{
-	width: 900px;
-	height: 200px;
-	margin-bottom: 50px;
-	margin-top: -60px;
-	position: relative;
-	top: -28px;
-	transform: scaleX(20deg);
-}
-#box div{
-	height: 500px;
-	width: 300px;
-	float: left;
-	margin-bottom: 50px;
-	/*position: relative;*/
-}
-i{
-	position: relative;
-	left: 145px;
-	top: 140px;
-	display: block;
-	height: 30px;
-	width: 10px;
-	border-radius: 60px;
-	background: lightgoldenrodyellow;
-	animation: move 1s linear infinite;
-}
-@keyframes move{
-	0{transform: rotate(20deg);}
-	50%{transform: rotate(0deg);}
-	100%{transform: rotate(-10deg);}
-}
-#box em{
-	display: block;
-	height: 350px;
-	width: 20px;
-	border-radius: 5px;
-	margin:150px 0px 0px 140px;
-    text-align: center;
-    z-index: 1000;
-}
-#a{
-	background: yellow;
-}
-#b{
-    background: purple;
-}
-#c{
-	background: brown;
-}
-#txt{
-	height: 30px;
-	width: 150px;
-	color: #b0b0b0;
-	border:1px solid gray;
-}
-#btn1{
-	height: 30px;
-	margin-left: 20px;
-	width: 60px;
-}
-#btn2{
-	height: 30px;
-	margin-left: 20px;
-	width: 60px;
-}
-form{
-	width: 350px;
-	margin:0px auto;
-}
-]]></content>
-    </entry>
-    
-    <entry>
-      <title></title>
-      <url>http://yoursite.com/2016/09/02/%E6%B1%89%E8%AF%BA%E5%A1%94/hannuota/</url>
-      <content type="html"><![CDATA[<!DOCTYPE html>
-<html>
+
+  
+
+
+<html class="theme-next muse use-motion">
 <head>
-<meta charset="utf-8">
-	<title>汉诺塔游戏</title>
-	<link rel="stylesheet" type="text/css" href="css/han.css">
-	<script type="text/javascript" src="js/han.js"></script>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="dou" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.5.0" />
+
+
+
+
+
+
+<meta name="description" content="The wonderful thing is eat the world。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="小豌豆">
+<meta property="og:url" content="http://yoursite.com/page/3/index.html">
+<meta property="og:site_name" content="小豌豆">
+<meta property="og:description" content="The wonderful thing is eat the world。">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="小豌豆">
+<meta name="twitter:description" content="The wonderful thing is eat the world。">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> 小豌豆 </title>
 </head>
-<body>
-<div id="box">
-    <div id="Oa">
-    	<i class="i1"></i>
-    	<em id="a">a</em>
-    </div>
-	<div id="Ob">
-		<i class="i2"></i>
-		<em id="b">b</em>
-	</div>
-	<div id="Oc">
-		<i class="i3"></i>
-		<em id="c">c</em>
-	</div>
-<!--	<i id="idiv"></i>-->
-	<form>
-		<input type="text" value="输入盘子个数" id="txt">
-		<input type="button" id="btn1" value="开始">
-		<input type="button" id="btn2" value="暂停">
-	</form>
-	
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?6a55f88ab917f908a12c021f1c7e68b8";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+  <embed src="../source/music/1.mp3" hidden="true" autostart="true" loop="true"/>
+  <div class="container one-collumn sidebar-position-left 
+   page-home 
+ ">
+    <div class="headband"></div>
+    <a href="https://github.com/you"><img class="image" style="position: absolute; top: 0; right: 0px; border: 0;" src="https://camo.githubusercontent.com/52760788cde945287fbb584134c4cbc2bc36f904/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f77686974655f6666666666662e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_white_ffffff.png"></a>
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">小豌豆</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">smallDouDou</p>
 </div>
 
-</body>
-</html>]]></content>
-    </entry>
-    
-    <entry>
-      <title></title>
-      <url>http://yoursite.com/2016/09/02/%E8%B4%AA%E5%90%83%E8%9B%87/js/%E5%8C%80%E9%80%9F/</url>
-      <content type="html"><![CDATA[function elementMove(ele,json,fn){
-	clearInterval(ele.time);
-	ele.time=setInterval(function(){
-	   for( attr in json){
-	   	   if(attr=="opacity"){
-	   	   	  var current=Math.round(parseFloat(getStyle(ele,attr)*100));
-	   	   }else{
-	   	   	  var current=Math.round(parseFloat(getStyle(ele,attr)));
-	   	   }
-	   	   var speed=20;
-	       if(attr=="left"){
-	       	   
-	       	  if(current>=580||current<=0){ alert("gameover");="" clearinterval(ele.time);="" return;="" }else{="" if(json[attr]="=580){" ele.style[attr]="(current+speed)+"px";" }="" if(attr="="top"){" iscomplete="false;" if(current="">=480||current</=0){>]]></content>
-    </entry>
-    
-    <entry>
-      <title></title>
-      <url>http://yoursite.com/2016/09/02/%E8%B4%AA%E5%90%83%E8%9B%87/js/eventFZ/</url>
-      <content type="html"><![CDATA[var evenObject={
-	/*事件本身兼容*/
-	getEven:function(event){
-       return event||window.event;
-	},
-	/*鼠标键盘事件的兼容*/
-    getButton:function(event){
-    if(document.implementation.hasFeature("MouseEvents","2.0")){
-      return event.button;
-    }else{
-      //针对IE8及以前版本
-      console.log('button:'+event.button)
-      switch(event.button){
-        case 0:
-        case 1:
-        case 3:
-        case 5:
-        case 7: return 0;
-        case 4: return 1;
-        case 2:
-        case 6: return 2;
-      }
-    }
-  },
-  /*得到目标事件的兼容*/
-    getTarget:function(event){
-    	return event.target||event.srcElement;
-    },
-  /*阻止事件冒泡的兼容*/
-    stopPro:function(event){
-    	if (event.stopPropagation) {
-    		event.stopPropagation();
-    	}else{
-    		event.cancelBubble=true;
-    	}
-    },
-  /*取消事件的默认行为的兼容*/
-    returnFal:function(event){
-    	if (event.preventDefault) {
-    		event.preventDefault();
-    	}else{
-    		event.returnValue=false;
-    	}
-    },
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
 
-   /*dom2级事件监听的兼容(这里的bool参数只能传false,,为了IE6。。)*/
-   addListener:function(element,item,itFunc){
-   		if (element.addEventListener) {
-   			element.addEventListener(item,itFunc,false);
-   		}else if(element.attachEvent){
-   			element.attachEvent("on"+item,itFunc);
-   		}else{
-   			element["on"+item]=itFunc;
-   		}
-   },
-   removeListener:function(element,item,itFunc){
-   	   if (element.removeEventListener) {
-   	   		element.removeEventListener(item,itFunc,false);
-   	   }else if(element.attachEvent){
-   	   		element.detachEvent("on"+item,itFunc);
-   	   }else{
-   	   		element["on"+item]=null;
-   	   }
-   },
-   /*得到浏览器窗口大小的兼容*/
-   getClientWidth:function(){
-   	  return document.documentElement.clientWidth||document.body.clientWidth;
-   },
-   getClientHeight:function(){
-   	return document.documentElement.clientHeight||document.documentElement.clientHeight;
-   },
-}]]></content>
-    </entry>
-    
-    <entry>
-      <title></title>
-      <url>http://yoursite.com/2016/09/02/%E8%B4%AA%E5%90%83%E8%9B%87/js/eatSnake/</url>
-      <content type="html"><![CDATA[var foodX,foodY,head;
-var count=0;
- var temp=["0","20","40","60","80","100","120","140","160","180","200","220","240","260","280","300","320","340","360","380","400","420","440","460","480","500","520","540","560","580","600"];
-window.onload=function(){
-	var home=document.getElementById("home");
-	var start=document.getElementById("btn1");
-	var stop=document.getElementById("btn2");
-	foodX=home.offsetWidth;
-	foodY=home.offsetHeight;
-	evenObject.addListener(start,"click",startGame);
-	evenObject.addListener(stop,"click",stopGame);
-	initPage();
-	
-}
-function initPage(){
-	 var fragment = document.createDocumentFragment();
-	 
-	for(var i=0;i<25;i++){ var="" span="document.createElement("span");" span.classname="lineRow" ;="" span.style.left="0px" span.style.top="i*20+"px";" fragment.appendchild(span);="" for(var="" j="0;j<30;j++){" if(i="=0){" }="" home.appendchild(fragment);="" food="document.createElement("span");" food.classname="foodSpan" food.style.left="Math.round(Math.random()*(foodX-22)+1)+"px";" food.style.top="Math.round(Math.random()*(foodY-22)+1)+"px";" food.style.background="gainsboro" home.appendchild(food);="" function="" startgame(){="" if(count="=0){" divsnake="document.createElement("div");" divsnake.classname="head" divsnake.style.left="temp[Math.round(Math.random()*29)]+"px";" divsnake.style.top="temp[Math.round(Math.random()*24)]+"px";" divsnake.style.background="#fff" home.appendchild(divsnake);="" head="document.getElementsByClassName("head")[0];" obj="{" left:0,="" elementmove(head,obj);="" count++;="" keyevent();="" eat();="" stopgame(){="" clearinterval(head.time);="" clearinterval(time2);="" keyevent(){="" obj1="{" };="" obj2="{" left:580,="" obj3="{" top:0,="" obj4="{" top:480,="" document.onkeydown="function(event){" event="evenObject.getEven(event);" switch(event.keycode){="" case="" 37:="" movetoleft(head,obj1);="" break;="" 38:="" movetotop(head,obj3);="" 39:="" movetoright(head,obj2);="" 40:="" movetobottom(head,obj4);="" default:="" movetoleft(element,obj){="" movetoright(element,obj){="" movetotop(element,obj){="" movetobottom(element,obj){="" eat(){="" num;="" foodspan="document.getElementsByClassName("foodSpan")[0];" alert(foodspan.classname);="" time2="setInterval(function(){" _left="foodSpan.offsetLeft;" _top="foodSpan.offsetTop;" if(head.offsetleft="">_left-10&&head.offsetLeft<_left+20&&head.offsettop>_top-10&&head.offsetTop<_top+20){ num="1;" foodspan.style.left="temp[Math.round(Math.random()*29)]+"px";" foodspan.style.top="temp[Math.round(Math.random()*24)]+"px";" }else{="" }="" switch(num){="" case="" 1:adddiv();="" break;="" default:="" var="" divlist="document.getElementsByTagName("div");" for(var="" k="divList.length-1;k">0;k--){
-			divList[k].style.left=divList[k-1].offsetLeft+"px";
-			divList[k].style.top=divList[k-1].offsetTop+"px";
-		}
-	    num=0;
-	    
-   },200);
-   
+<nav class="site-nav">
+  
 
-}
-function addDiv(){	    
-		var divList=document.getElementsByTagName("div");
-        var lastDivX=divList[divList.length-1].offsetLeft+20;
-		var lastDivY=divList[divList.length-1].offsetTop+20;
-		var divSna=document.createElement("div");
-		divSna.className="head";
-		divSna.style.left=lastDivX+"px";
-		divSna.style.top=lastDivY+"px";
-		divSna.style.background="#fff";
-		home.appendChild(divSna);
-		
-}
-</_top+20){></_left+20&&head.offsettop></25;i++){>]]></content>
-    </entry>
-    
-    <entry>
-      <title></title>
-      <url>http://yoursite.com/2016/09/02/%E8%B4%AA%E5%90%83%E8%9B%87/%E8%B4%AA%E5%90%83%E8%9B%87(1)/</url>
-      <content type="html"><![CDATA[<!DOCTYPE html>
-<html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title></title>
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-heartbeat fa-fw"></i> <br />
+            
+            公益404
+          </a>
+        </li>
+      
 
-    <style>
-        #box{
-            width:461px;
-            height:461px;
-            position: absolute;
-            border:2px solid #000;
-            left:460px;
-            top:100px;
-            border-radius:5px;
-            background:url(img/game.jpg) no-repeat center center;
-        }
-        .wall{
-            width:10px;
-            height:10px;
-            background:black;
-            position: absolute;
-        }
-        .lineRow{
-            display: block;
-            width:600px;
-            height:1px;
-            position:absolute;
-            background:#000;
-            opacity: 0.2;
-            filter:alpha(opacity=20);
-        }
-        .lineCol{
-            display: block;
-            width:1px;
-            height:500px;
-            position:absolute;;
-            background:#000;
-            opacity: 0.2;
-            filter:alpha(opacity=20);
-        }
-        .snack,.food,.otherFood{
-            width:10px;
-            height:10px;
-            background:brown;
-            -webkit-border-radius: 6px;
-            -moz-border-radius: 6px;
-            border-radius: 1px;
-            position:absolute;
-        }
-        .food{
-            background:red;
-        }
-        .menu{
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-            width:160px;
-            height:465px;
-            background:url(img/game.jpg) no-repeat center center;
-            position:absolute;
-            left:300px;
-            top:100px;
-            -webkit-border-radius: 6px;
-            -moz-border-radius: 6px;
-            border-radius: 6px;
-        }
-        .goal{
-            overflow:hidden;
-            display: inline-block;
-            color:#fff;
-            font-size:20px;
-            text-align:center;
-            width: 50%;
-            height:60px;
-            line-height:60px;
-            background:rgba(43,56,90,0.5);
-            box-shadow:inset 0px 0px 3px 3px black;
-            -webkit-border-radius: 8px;
-            -moz-border-radius: 8px;
-            border-radius: 8px;
-        }
-        #start,#pause,#restart{
-            width:100%;
-            height:59px;
-            text-align:center;
-            font-size: 24px;
-            line-height:59px;
-            background:rgba(43,56,90,0.5);
-            box-shadow:inset 0px 0px 2px 2px black;
-            color:#fff;
-            margin-top: 4px;
-            -webkit-border-radius: 6px;
-            -moz-border-radius: 6px;
-            border-radius: 6px;
-        }
-        .rank{
-            height: 213px;
-            width:100%;
-            position:relative;
-        }
-        #add,#reduce,#nandu{
-            width:30px;
-            height:30px;
-            background:#000;
-            position: absolute;
-            border-radius: 5px;
-            left:10px;
-            color:#fff;
-            font-size:24px;
-            line-height:30px;
-            text-align:center;
-            top:20px;
-        }
-        #nandu{
-            width:60px;
-            font-size: 16px;
-            left:50px;
-        }
-        #add{
-            left:120px;
-        }
-        #gameover{
-            width:280px;
-            height:160px;
-            background:lightgreen;
-            position: absolute;
-            left:560px;
-            top:240px;
-            padding-top:50px;
-            border-radius:5px;
-            display: none;
-        }
-        #gameover div{
-            width:280px;
-            height:60px;
-            color:red;
-            font-size:28px;
-            margin: 0 auto;
-            text-align: center;
-        }
-        #start,#pause,#restart,#add,#reduce:hover{
-            cursor:pointer;
-        }
-        .score_1{
-            position:absolute;
-            width:100%;
-            height:30px;
-            color:#fff;
-            background-color:rgba(12,8,4,0.5);
-            top:80px;
-            line-height:30px;
-            font-size:24px;
-            text-align:center;
-        }
-        #tall_h{
-            top:110px;
-            overflow:hidden;
-        }
-        .otherFood{
-            background:white;
-        }
-    </style>
-</head>
-<body>
-    <div>
-        贪食蛇游戏，注意，当吃到白色的会加速。
-        <div class="menu">
-            <span class="goal">得分：</span><span class="goal" id="goal">0</span>
-            <div class="rank">
-                <div id="reduce">-</div><div id="nandu"><span>等级:</span><span id="rankCount">1</span></div><div id="add">+</div>
-                <div class="score_1">历史最高分:</div><div class="score_1" id="tall_h">0</div>
-            </div>
-            <div id="start">开始</div>
-            <div id="pause">暂停</div>
-            <div id="restart">重新开始</div>
-        </div>
-        <div id="box">
-            <!-- 游戏界面-->
-        </div>
-        <div id="gameover">
-            <div>游戏结束</div>
-            <div><span>得分：</span><span id="allGoal">0</span></div>
-        </div>
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="#" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup">
+ <span class="search-icon fa fa-search"></span>
+ <input type="text" id="local-search-input">
+ <div id="local-search-result"></div>
+ <span class="popup-btn-close">close</span>
+</div>
+
+
     </div>
+  
+</nav>
 
-    <script>
+ </div>
+    </header>
 
-        window.onload = function(){
-            const SNACK = 2,WALL = 1,SPACE = 0,FOOD = 3;//类型
-            var score = 0;//得分
-            var countF = 0;
-            var isOther = false;//判断是否为其他食物
-            var food; //div,产生的食物
-            var food2=document.createElement("div");
-            var isCanMove = true;//用来处理暂停开始的开关
-            var isStart = false;//是否正在走
-            var goal = document.getElementById("goal");//得分
-            var box = document.getElementById("box");//游戏界面
-            var startBtn = document.getElementById("start");//开始
-            var pauseBtn = document.getElementById("pause");//暂停
-            var restartBtn = document.getElementById("restart");//重新开始
-            var over = document.getElementById("gameover");//游戏结束
-            var addRank = document.getElementById("add");//增加等级
-            var reduceRank = document.getElementById("reduce");//降低等级
-            var rankCount = document.getElementById("rankCount");//等级数
-            var tall_h = document.getElementById("tall_h");//历史最高分
-            var arr=[];//目前还没用到，如果需要关卡，启用这个数组
-            var snackDiv=[];//玩家：蛇
-            var wallArr = [];//墙
-            var timer;//定时器
-            var isOver = true;//游戏是否结束；
-            //
-            var dir = "top";//移动方向，默认向上
-            var step = -11;//移动步长
-            var speedTime = 240;//移动的速度，取值越小越快
-            //
-
-            //
-            initGame();
-            rank();
-            setHistory();
-            //更新历史最高分到界面上
-            function setHistory(){
-                var hist = window.localStorage.getItem("hist");
-                if(hist!=null){
-                    tall_h.innerHTML = hist;
-                }
-            }
-            //加速
-            function addSpeed(){
-                var r = parseInt(rankCount.innerHTML);
-                if(r>=10){
-                    rankCount.innerHTML = 10+"";
-                    speedTime = 40;
-                }else{
-                    r++;
-                    rankCount.innerHTML = r+"";
-                    speedTime -=20;
-                }
-                if(isOver){
-                    return;
-                }
-                run();
-            }
-            //减速
-            function reduceSpeed(){
-                var r = parseInt(rankCount.innerHTML);
-                if(r<=1){
-                    rankCount.innerHTML = 1+"";
-                    speedTime=240;
-                }else{
-                    r--;
-                    rankCount.innerHTML = r+"";
-                    speedTime+=20;
-                }
-                if(isOver){
-                    return;
-                }
-                run();
-            }
-            //速度等级
-            function rank(){
-                addRank.onclick = function(){
-                    addSpeed();
-                }
-                reduceRank.onclick = function (){
-                    reduceSpeed();
-                }
-            }
-            //初始化游戏
-            function initGame(){
-                init();
-                bindMenu();
-            }
-            //开始
-            function start(){
-
-                keyListener();//添加键盘监听事件
-                createFood();
-                run();
-            }
-            //启动
-            function run(){
-                clearInterval(timer);
-                timer = setInterval(function(){
-                    if(isCanMove){
-                        //后面的全部跟着前一个走，只改变位置
-                        for(var i = snackDiv.length-1;i>=1;i--){
-                            snackDiv[i].style.left = parseInt(getStyle(snackDiv[i-1],"left")) +"px";
-                            snackDiv[i].style.top = parseInt(getStyle(snackDiv[i-1],"top")) +"px";
-                        }
-                        //第一个
-                        var first = parseInt(getStyle(snackDiv[0],dir)) + step;
-                        snackDiv[0].style[dir] = first +"px";
-                        checkCollision();//碰撞检测。
-                    }
-                },speedTime);
-            }
-            //食物是否出现在蛇身上
-            function appearInSnack(x,y){
-                var isAppear = false;
-                for (var i = 0; i < snackDiv.length; i++) {
-                    var snack_body_left = parseInt(getStyle(snackDiv[i], "left"));
-                    var snack_body_top = parseInt(getStyle(snackDiv[i], "top"));
-                    if (Math.abs(x - snack_body_left) < 6 || Math.abs(y - snack_body_top) < 6) {
-                        isAppear = true;
-                        break;
-                    }
-                }
-                return isAppear;
-            }
-            //创建食物
-            function createFood(){
-
-                var x = Math.floor(Math.random()*40+1)*11 + 1;
-                var y = Math.floor(Math.random()*40+1)*11 + 1;
-                //判断食物是否在蛇身上
-                while(appearInSnack(x,y)) {//出现时一直循环
-                    x = Math.floor(Math.random()*40+1)*11 + 1;
-                    y = Math.floor(Math.random()*40+1)*11 + 1;
-                }
-                //产生另一种食物
-                countF++;
-                if(countF>=4){
-                    isOther = true;
-                    food2 = document.createElement("div");
-                    food2.type = FOOD;
-                    food2.className = "otherFood";
-                    food2.style.left =x +"px";
-                    food2.style.top = y + "px";
-                    box.appendChild(food2);
-                    countF=0;
-                }
-                var x = Math.floor(Math.random()*40+1)*11 + 1;
-                var y = Math.floor(Math.random()*40+1)*11 + 1;
-                //判断食物是否在蛇身上
-                while(appearInSnack(x,y)) {//出现时一直循环
-                    x = Math.floor(Math.random()*40+1)*11 + 1;
-                    y = Math.floor(Math.random()*40+1)*11 + 1;
-                }
-                food = document.createElement("div");
-                food.type = FOOD;
-                food.className="food";
-                food.style.left =x +"px";
-                food.style.top = y + "px";
-                box.appendChild(food);
-
-                //创建另一种食物
-            }
-            //键盘事件监听
-            function keyListener(){
-                document.onkeydown = function(event){
-                    switch (event.keyCode){
-                        case 37:
-                            //left
-                            if(dir!="left"){
-                                dir = "left";
-                                if(step>0){
-                                    step = -step;
-                                }
-                            }
-                            break;
-                        case 38:
-                            //up
-                            if(dir!="top"){
-                                dir = "top";
-                                if(step>0){
-                                    step = -step;
-                                }
-                            }
-                            break;
-                        case 39:
-                            //right
-                            if(dir!="left"){
-                                dir = "left";
-                                if(step<0){
-                                    step = -step;
-                                }
-                            }
-
-                            break;
-                        case 40:
-                            //down
-                            if(dir!="top"){
-                                dir = "top";
-                                if(step<0){
-                                    step = -step;
-                                }
-                            }
-                            break;
-                        default:
-                            break;
-                    }
-                }
-            }
-            //检测碰撞
-            function checkCollision(){
-                var L = parseInt(getStyle(snackDiv[0],"left"));//蛇头的left值
-                var T = parseInt(getStyle(snackDiv[0],"top"));//蛇头的top值
-                //检测是否撞到墙
-                for(var i = 0;i<wallArr.length;i++){
-                    var wall_L = parseInt(getStyle(wallArr[i],"left"));
-                    var wall_T = parseInt(getStyle(wallArr[i],"top"));
-                    if(Math.abs(L-wall_L)<6 &&Math.abs(T-wall_T)<6){
-                        gameover();//游戏结束
-                    }
-                }
-                //检测是否咬到自己
-                for(var i = 1;i<snackDiv.length;i++){
-                    var snack_body_left = parseInt(getStyle(snackDiv[i],"left"));
-                    var snack_body_top = parseInt(getStyle(snackDiv[i],"top"));
-                    if(Math.abs(snack_body_left-L)<6 && Math.abs(snack_body_top-T)<6){
-                        gameover();//游戏结束
-                    }
-                }
-                //判断是否吃到食物
-                eatFood(food);
-                eatFood(food2);
-
-            }
-            //判断是否吃到食物
-            function eatFood(food){
-                var L = parseInt(getStyle(snackDiv[0],"left"));//蛇头的left值
-                var T = parseInt(getStyle(snackDiv[0],"top"));//蛇头的top值
-                var food_Left = parseInt(getStyle(food,"left"));
-                var food_top = parseInt(getStyle(food,"top"));
-                if(Math.abs(food_Left-L)<6 && Math.abs(food_top-T)<6){
-                    gameGoal();//游戏得分。
-                    var flag = true;
-                    if(food.className=="otherFood"){
-                        addSpeed();//吃到白色的加速
-                        flag=false;
-                    }
-                    food.type = SNACK;
-                    food.className = "snack";
-                    snackDiv.push(food);
-                    if(flag){
-                        createFood();
-                    }
-                }
-            }
-            //游戏得分
-            function gameGoal(){
-                score += 100;
-                goal.innerHTML = score;
-            }
-            //游戏结束
-            function gameover(){
-
-                var allGoal = document.getElementById("allGoal");
-                allGoal.innerHTML = goal.innerHTML;
-                over.style.display="block";
-                clearInterval(timer);
-                isOver = true;
-                storeage(parseInt(goal.innerHTML));//存储最高分
-            }
-            //菜单事件
-            function bindMenu(){
-                //开始
-                startBtn.onclick = function(){
-                    if(!isStart){
-                        isStart = true;
-                        over.style.display="none";
-                        start();
-                        isOver = false;
-                    }
-                }
-                //暂停
-                pauseBtn.onclick=function() {
-                    if (isCanMove) {
-                        pauseBtn.innerHTML = "继续";
-                        isCanMove = false;
-                    } else {
-                        pauseBtn.innerHTML = "暂停";
-                        isCanMove = true;
-                    }
-
-                }
-                //重新开始
-                restartBtn.onclick = function(){
-                    clearInterval(timer);
-                    initGame();//初始化游戏
-                    isStart = true;
-                    over.style.display="none";
-                    start();
-                    isOver = false;
-                }
-            }
-            //初始化
-            function init(){
-                isStart = false;
-                box.innerHTML="";
-                arr=[];
-                snackDiv=[];//
-                wallArr = [];
-                dir = "top";
-                step = -11;
-                score = 0;
-                isOver = true;//游戏已经结束
-
-                var fragment = document.createDocumentFragment();
-                for(var i=0;i<42;i++){
-                    var temp=[];
-                    //横线
-                    var span = document.createElement("span");
-                    span.className = "lineRow";
-                    span.style.left="0px";
-                    span.style.top = i*11+"px";
-                    fragment.appendChild(span);
-                    for(var j=0;j<42;j++){
-                        //竖线
-                        if(i==0){
-                            var span = document.createElement("span");
-                            span.className = "lineCol";
-                            span.style.left=j*11+"px";
-                            span.style.top ="0px";
-                            fragment.appendChild(span);
-                        }
-                        //墙壁
-                        if(i==0 || j==0 || i==41 || j==41){
-                            var div = document.createElement("div");
-                            div.style.left =1+ j*11 +"px";
-                            div.style.top = 1+i*11 + "px";
-                            div.className = "wall";
-                            fragment.appendChild(div);
-                            temp[j]=WALL;
-                            div.type = WALL;
-                            wallArr.push(div);
-                        }else{
-                            temp[j]=SPACE;
-                        }
-                        //创建玩家
-                        if(i>=37 && i!=41){
-                            if(j==20){
-                                var div = document.createElement("div");
-                                div.className="snack";
-                                div.style.left =1+ j*11 +"px";
-                                div.style.top = 1+i*11 + "px";
-                                fragment.appendChild(div);
-                                temp[j]=SNACK;
-                                div.type = SNACK;//标记类型
-                                snackDiv.push(div);
-                            }
-                        }
-                    }
-                    arr[i] = temp;
-                }
-                box.appendChild(fragment);
-            }
-            //存取最高分
-            function storeage(currentScore){
-                //本地存储数据
-                var hist = window.localStorage.getItem("hist");
-                if(hist!=null){//已经存在数据
-                    hist = parseInt(hist);
-                    if(currentScore >= hist){
-                        window.localStorage.setItem("hist",currentScore);
-                        setHistory();
-                    }
-                }else{//本地没有数据
-                    window.localStorage.setItem("hist",currentScore);
-                    setHistory();
-                }
-            }
-
-
-            function getStyle(dom,styleName){
-                if(dom.currentStyle){
-                    return dom.currentStyle[styleName];
-                }else{
-                    return window.getComputedStyle(dom,false)[styleName];
-                }
-            }
-        }
-    </script>
-</body>
-</html>]]></content>
-    </entry>
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
     
-    <entry>
-      <title></title>
-      <url>http://yoursite.com/2016/09/02/%E8%B4%AA%E5%90%83%E8%9B%87/index/</url>
-      <content type="html"><![CDATA[<!DOCTYPE html>
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/09/02/贪吃蛇/index/" itemprop="url">
+                  未命名
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-09-02T14:47:25+08:00" content="2016-09-02">
+              2016-09-02
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/09/02/贪吃蛇/index/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/02/贪吃蛇/index/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/09/02/贪吃蛇/index/" class="leancloud_visitors" data-flag-title="">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="utf-8">
@@ -1131,90 +444,218 @@ function addDiv(){
 	    </form>
 	</body>
 </html>
-]]></content>
-    </entry>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
     
-    <entry>
-      <title><![CDATA[Hexo 安装教程]]></title>
-      <url>http://yoursite.com/2016/09/01/Hexo%20%E5%AE%89%E8%A3%85%E6%95%99%E7%A8%8B/</url>
-      <content type="html"><![CDATA[<p>Hexo 是一个简单地、轻量地、基于Node.js的一个静态博客框架。通过Hexo我们可以快速创建自己的博客，仅需要几条命令就可以完成。本篇教程只针对win </p>
-<a id="more"></a>
-<h4 id="配置环境"><a href="#配置环境" class="headerlink" title="配置环境"></a>配置环境</h4><hr>
-<p>安装Node,用来生成静态页面<br>安装git,把本地git提交到gitHub上<br>（安装到方便查找的地址）</p>
-<p>Node下载地址&gt;&gt;&gt;&gt;&gt;&gt;git下载地址</p>
-<h4 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h4><hr>
-<p>在 新建的hexo目录下右键 git bash here</p>
-<p>输入npm install -g hexo 命令回车执行</p>
-<p>上一条命令执行完后，输入hexo init 初始化hexo.<br>hexo g 生成静态页面 &gt;&gt;hexo s 启动本地服务进行调试 浏览器输入localhost:4000<br>ctrl +C 停止</p>
-<h4 id="配置gitHub"><a href="#配置gitHub" class="headerlink" title="配置gitHub"></a>配置gitHub</h4><hr>
-<p>在gitHub种建立与你用户名对象的仓库 仓库名为 用户名.github.io<br>创建SSH-Key</p>
-<p>$ ssh-keygen -t rsa -C “your_email@youremail.com” </p>
-<p>后面的your_email@youremail.com改为你在github上注册的邮箱，之后会要求确认路径和输入密码，我们这使用默认的一路回车就行。成功的话会在~/下生成.ssh文件夹，进去，打开id_rsa.pub，复制里面的key。<br>回到github上，进入 Account Settings（账户配置），左边选择SSH Keys，Add SSH Key,title随便填，粘贴在你电脑上生成的key。</p>
-<p>$ git config –global user.name “your name”<br>$ git config –global user.email “your_email@youremail.com”</p>
-<p>进入要上传的仓库，右键git bash，添加远程地址：</p>
-<p>$ git remote add origin git@github.com:yourName/yourRepo.git</p>
-<p>后面的yourName和yourRepo表示你再github的用户名和刚才新建的仓库，加完之后进入.git，打开config，这里会多出一个remote “origin”内容，这就是刚才添加的远程地址，也可以直接修改config来配置远程地址。<br>创建新文件夹，打开，然后执行</p>
-<p>git init </p>
-<p>以创建新的 git 仓库。</p>
-<h4 id="编辑文章并部署"><a href="#编辑文章并部署" class="headerlink" title="编辑文章并部署"></a>编辑文章并部署</h4><hr>
-<p>可以使用hexo new “文章名” 生成一个.md文件 路径为source_post\文章名.md<br>找到该文件打开并编辑<br>结束后输入hexo s<br>刷新<a href="http://localhost:4000/，可以发现已生成了一篇新文章" target="_blank" rel="external">http://localhost:4000/，可以发现已生成了一篇新文章</a> “你输入的文章名”。</p>
-<p>执行hexo g 生成静态页面</p>
-<p>部署到Github前需要配置_config.yml文件，首先找到下面的内容</p>
-<p>Deployment<br>Docs: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">http://hexo.io/docs/deployment.html</a><br>deploy:<br>type:</p>
-<p>改为</p>
-<p>Deployment<br>Docs: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">http://hexo.io/docs/deployment.html</a><br>deploy:<br>type: github<br>repository: git@github.com:你的名字/你的名字.github.io.git<br>branch: master</p>
-<p>执行 npm install hexo-deployer-git –save</p>
-<p>执行hexo d 部署到gitHub<br>当部署完成后，在浏览器中打开<a href="http://your_name.github.io/" target="_blank" rel="external">http://your_name.github.io/</a></p>
-<h4 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h4><hr>
-<p>每次部署的步骤，可按以下三步来进行。</p>
-<p>hexo clean</p>
-<p>hexo generate</p>
-<p>hexo deploy</p>
-<p>一些常用命令：</p>
-<p>hexo new”postName” #新建文章</p>
-<p>hexo new page”pageName” #新建页面</p>
-<p>hexo generate #生成静态页面至public目录</p>
-<p>hexo server #开启预览访问端口（默认端口4000，’ctrl + c’关闭server）</p>
-<p>hexo deploy #将.deploy目录部署到GitHub</p>
-<p>hexo help # 查看帮助</p>
-<p>hexo version #查看Hexo的版本<br>报错总结<br>ERROR Deployer not found: git 或者 ERROR Deployer not found: github</p>
-<p>解决方法： npm install hexo-deployer-git –save</p>
-<p>如发生报错： ERROR Process failed: layout/.DS_Store , 那么进入主题里面layout和_partial目录下，使用删除命令：</p>
-<p>rm-rf.DS_Store</p>
-<p>ERROR Plugin load failed: hexo-server</p>
-<p>原因：</p>
-<p>Besides,utilities are separated into a standalone module.hexo.util is not reachable anymore.</p>
-<p>解决方法，执行命令：</p>
-<p>sudo npm install hexo-server</p>
-<p>执行命令hexo server，提示：Usage: hexo ….</p>
-<p>原因：</p>
-<p>我认为是没有生成本地服务</p>
-<p>解决方法，执行命令：</p>
-<p>npm install hexo-server –save</p>
-<p>提示：hexo-server@0.1.2 node_modules/hexo-server</p>
-<p>表示成功了参考</p>
-<p>这个时候再执行：</p>
-<p>hexo-server</p>
-<p>得到:</p>
-<p>INFOHexois running at <a href="http://0.0.0.0:4000/.PressCtrl+C" target="_blank" rel="external">http://0.0.0.0:4000/.PressCtrl+C</a> to stop.</p>
-<p>这个时候再点击<a href="http://0.0.0.0:4000，正常情况下应该是最原始的画面，但是我看到的是：" target="_blank" rel="external">http://0.0.0.0:4000，正常情况下应该是最原始的画面，但是我看到的是：</a></p>
-<p>白板和Cannot GET / 几个字</p>
-<p>原因：</p>
-<p>由于2.6以后就更新了，我们需要手动配置些东西，我们需要输入下面三行命令：</p>
-<p>npm install hexo-renderer-ejs –save</p>
-<p>npm install hexo-renderer-stylus –save</p>
-<p>npm install hexo-renderer-marked –save</p>
-<p>这个时候再重新生成静态文件，命令：</p>
-<p>hexo generate（或hexo g）</p>
-<p>启动本地服务器：</p>
-<p>hexo server（或hexo s）</p>
-]]></content>
-    </entry>
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
     
-    <entry>
-      <title><![CDATA[About Jane]]></title>
-      <url>http://yoursite.com/2016/09/01/About%20Jane/</url>
-      <content type="html"><![CDATA[<!DOCTYPE html><html><head><title>About Jane</title><meta charset="utf-8"><link href="https://dn-maxiang.qbox.me/res-min/themes/marxico.css" rel="stylesheet"><style></style></head><body><div id="preview-contents" class="note-content">
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/09/01/Hexo 安装教程/" itemprop="url">
+                  Hexo 安装教程
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-09-01T17:54:03+08:00" content="2016-09-01">
+              2016-09-01
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/09/01/Hexo 安装教程/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/01/Hexo 安装教程/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/09/01/Hexo 安装教程/" class="leancloud_visitors" data-flag-title="Hexo 安装教程">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>Hexo 是一个简单地、轻量地、基于Node.js的一个静态博客框架。通过Hexo我们可以快速创建自己的博客，仅需要几条命令就可以完成。本篇教程只针对win </p>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/09/01/Hexo 安装教程/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/09/01/About Jane/" itemprop="url">
+                  About Jane
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-09-01T08:41:52+08:00" content="2016-09-01">
+              2016-09-01
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/09/01/About Jane/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/09/01/About Jane/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+             <span id="/2016/09/01/About Jane/" class="leancloud_visitors" data-flag-title="About Jane">
+               &nbsp; | &nbsp;
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               <span class="post-meta-item-text">阅读次数 </span>
+               <span class="leancloud-visitors-count"></span>
+              </span>
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <!DOCTYPE html><html><head><title>About Jane</title><meta charset="utf-8"><link href="https://dn-maxiang.qbox.me/res-min/themes/marxico.css" rel="stylesheet"><style></style></head><body><div id="preview-contents" class="note-content">
                         
                     
 
@@ -1230,9 +671,503 @@ hobby: code  <br>
 view: the world <br>
 word: the wonderful thing is eat world.</p>
 </center>
-</div></body></html>]]></content>
-    </entry>
+</div></body></html>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+  </section>
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
+  </nav>
+
+
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/default_avatar.jpg"
+               alt="Jane" />
+          <p class="site-author-name" itemprop="name">Jane</p>
+          <p class="site-description motion-element" itemprop="description">The wonderful thing is eat the world。</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">11</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/5293373089/profile?rightmod=1&wvr=6&mod=personinfo&is_all=1" target="_blank">
+                  
+                    <i class="fa fa-weibo"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://www.zhihu.com/people/li-xiao-ning-75" target="_blank">
+                  
+                    <i class="fa fa-globe"></i>
+                  
+                  知乎
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://my.csdn.net/" target="_blank">
+                  
+                    <i class="fa fa-globe"></i>
+                  
+                  CSDN
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        <div class="links-of-blogroll motion-element">
+          
+        </div>
+
+      </section>
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Jane</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+
+  
+
+
+
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
+
+
+
+  
+  
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
+
+
+
+  
+
+  
     
   
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"DouDou"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
   
-</search>
+    
+  
+
+
+
+
+
+  
+  
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length == 0) {
+       search_path = "search.xml";
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    function proceedsearch() {
+      $("body").append('<div class="popoverlay">').css('overflow', 'hidden');
+      $('.popup').toggle();
+
+    }
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+    'use strict';
+    $.ajax({
+        url: path,
+        dataType: "xml",
+        async: true,
+        success: function( xmlResponse ) {
+            // get the contents from search data
+            isfetched = true;
+            $('.popup').detach().appendTo('.header-inner');
+            var datas = $( "entry", xmlResponse ).map(function() {
+                return {
+                    title: $( "title", this ).text(),
+                    content: $("content",this).text(),
+                    url: $( "url" , this).text()
+                };
+            }).get();
+            var $input = document.getElementById(search_id);
+            var $resultContent = document.getElementById(content_id);
+            $input.addEventListener('input', function(){
+                var matchcounts = 0;
+                var str='<ul class=\"search-result-list\">';                
+                var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                $resultContent.innerHTML = "";
+                if (this.value.trim().length > 1) {
+                // perform local searching
+                datas.forEach(function(data) {
+                    var isMatch = true;
+                    var content_index = [];
+                    var data_title = data.title.trim().toLowerCase();
+                    var data_content = data.content.trim().replace(/<[^>]+>/g,"").toLowerCase();
+                    var data_url = data.url;
+                    var index_title = -1;
+                    var index_content = -1;
+                    var first_occur = -1;
+                    // only match artiles with not empty titles and contents
+                    if(data_title != '' && data_content != '') {
+                        keywords.forEach(function(keyword, i) {
+                            index_title = data_title.indexOf(keyword);
+                            index_content = data_content.indexOf(keyword);
+                            if( index_title < 0 && index_content < 0 ){
+                                isMatch = false;
+                            } else {
+                                if (index_content < 0) {
+                                    index_content = 0;
+                                }
+                                if (i == 0) {
+                                    first_occur = index_content;
+                                }
+                            }
+                        });
+                    }
+                    // show search results
+                    if (isMatch) {
+                        matchcounts += 1;
+                        str += "<li><a href='"+ data_url +"' class='search-result-title'>"+ data_title +"</a>";
+                        var content = data.content.trim().replace(/<[^>]+>/g,"");
+                        if (first_occur >= 0) {
+                            // cut out 100 characters
+                            var start = first_occur - 20;
+                            var end = first_occur + 80;
+                            if(start < 0){
+                                start = 0;
+                            }
+                            if(start == 0){
+                                end = 50;
+                            }
+                            if(end > content.length){
+                                end = content.length;
+                            }
+                            var match_content = content.substring(start, end);
+                            // highlight all keywords
+                            keywords.forEach(function(keyword){
+                                var regS = new RegExp(keyword, "gi");
+                                match_content = match_content.replace(regS, "<b class=\"search-keyword\">"+keyword+"</b>");
+                            });
+                            
+                            str += "<p class=\"search-result\">" + match_content +"...</p>"
+                        }
+                        str += "</li>";
+                    }
+                })};
+                str += "</ul>";
+                if (matchcounts == 0) { str = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>' }
+                if (keywords == "") { str = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>' }
+                $resultContent.innerHTML = str;
+            });
+            proceedsearch();
+        }
+    });}
+
+    // handle and trigger popup window;
+    $('.popup-trigger').mousedown(function(e) {
+      e.stopPropagation();
+      if (isfetched == false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+
+    });
+
+    $('.popup-btn-close').click(function(e){
+      $('.popup').hide();
+      $(".popoverlay").remove();
+      $('body').css('overflow', '');
+    });
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+  </script>
+
+  
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+  </script>
+
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+      for (i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+      }
+    });
+  </script>
+
+  
+    <script type="text/javascript" src="http://cdn.staticfile.org/mathjax/2.4.0/MathJax.js"></script>
+    <script type="text/javascript" src="http://cdn.staticfile.org/mathjax/2.4.0/config/TeX-AMS-MML_HTMLorMML.js"></script>
+  
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("I81fN78I1YD0B2JhLPvPtxMy-gzGzoHsz", "zhHyl6MRoiQM7BIxIb7RL1g8");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+</body>
+</html>
